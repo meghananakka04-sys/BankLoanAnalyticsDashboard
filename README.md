@@ -1,77 +1,139 @@
 # Bank Loan Analytics Dashboard
 
-Most banking dashboards summarize lending activity through static reports and isolated metrics. While working on this project, I wanted to explore how a raw financial dataset could be converted into something more interactive and interpretable from a portfolio analysis perspective.
-
-The dataset included borrower information, funded amounts, repayment behavior, regional lending distribution, employment categories, loan purposes, and loan status classifications. Looking at these variables individually did not reveal much. The real challenge was organizing them into a system capable of showing lending trends, repayment quality, and portfolio performance in a more connected way.
-
-The entire project was built inside Microsoft Excel using pivot-based reporting, dashboard design techniques, slicers, KPI calculations, and interactive filtering systems.
+> Exploring how raw lending data can be transformed into a structured portfolio intelligence system using Excel.
 
 <br>
 
-## Dashboard Structure
+<table>
+<tr>
+<td width="33%">
 
-| Layer | Analytical Focus |
-|---|---|
-| Summary Dashboard | Portfolio-level KPI monitoring |
-| Overview Dashboard | Borrower segmentation and lending distribution |
-| Backend Design Sheet | Calculation logic and dashboard architecture |
+### Lending Activity
+
+Tracking how loan applications, funded amounts, and repayments evolve across borrower segments and time periods.
+
+</td>
+
+<td width="33%">
+
+### Portfolio Quality
+
+Separating healthy loans from risky lending categories to understand repayment quality and portfolio exposure.
+
+</td>
+
+<td width="33%">
+
+### Borrower Segmentation
+
+Analyzing how employment, ownership status, loan purpose, and geography influence lending behavior.
+
+</td>
+</tr>
+</table>
+
+<br><br>
+
+## Inside the Dashboard
+
+Rather than designing isolated Excel visuals, the project was structured as a connected reporting experience where different sections gradually move from high-level portfolio monitoring into borrower-level interpretation.
 
 <br>
 
-## Summary Dashboard
+### Summary Layer
 
 ![Summary Dashboard](assets/Summary_dashboard.png)
 
-This dashboard acts as the main reporting layer of the project.
+The first dashboard was designed to function as the operational command center of the project.
 
-Instead of focusing on only aggregate values, the dashboard was designed to monitor the relationship between funded amounts, repayment collections, portfolio quality, borrower health indicators, and lending performance trends simultaneously.
+Key lending indicators such as funded amounts, repayments, interest rates, debt-to-income ratios, and application volumes were centralized into a KPI-driven reporting layer capable of tracking overall portfolio health.
 
-One of the most important analytical sections was the separation between good loans and bad loans. This introduced a more risk-oriented perspective into the reporting structure rather than treating all lending activity equally.
+The dashboard also introduced comparative lending analysis through:
+MTD movement,
+MoM variation,
+and loan quality segmentation.
 
-The integration of MTD and MoM calculations also helped create a short-term trend monitoring system capable of tracking recent portfolio movement.
+Instead of treating all loans equally, the reporting logic separates financially healthy loans from charged-off loans to create a more risk-oriented analytical view.
 
-<br>
+<br><br>
 
-## Overview Dashboard
+### Segmentation & Lending Distribution
 
 ![Overview Dashboard](assets/Overview_dashboard.png)
 
-The second dashboard focuses more heavily on segmentation analysis.
+The second dashboard shifts the focus toward lending behavior patterns.
 
-Rather than looking at lending activity only from a financial perspective, this section explores how borrower categories influence loan distribution patterns across:
-employment length,
-home ownership,
-loan purpose,
-regional concentration,
-and loan term structures.
+At this stage, the analysis becomes less about totals and more about understanding how lending activity distributes itself across different borrower dimensions.
 
-This gradually shifts the analysis from simple reporting into borrower-level interpretation.
+<table>
+<tr>
+<td width="50%">
+
+#### Borrower Perspective
+
+Employment length  
+Home ownership  
+Loan purpose  
+Debt-to-income profile
+
+</td>
+
+<td width="50%">
+
+#### Lending Perspective
+
+Regional concentration  
+Loan term distribution  
+Funded amount trends  
+Monthly lending movement
+
+</td>
+</tr>
+</table>
 
 <br>
 
-## Behind the Dashboard
+This layer helped transform the project from a static reporting exercise into a more interpretive portfolio analysis workflow.
+
+<br><br>
+
+## Dashboard Architecture
 
 ![Backend Design](assets/Design_sheet.png)
 
-The backend layer contains the underlying dashboard architecture including:
-pivot structures,
-KPI aggregation workflows,
-slicer connections,
-comparative calculations,
-and portfolio segmentation logic.
+Behind the presentation layer, the workbook contains the underlying reporting structure used to power the dashboards.
 
-Separating the backend logic from the dashboard presentation layer made the reporting structure easier to maintain and visually cleaner to navigate.
+The backend logic includes:
+pivot aggregation systems,
+KPI calculations,
+slicer interactions,
+comparative monthly analysis,
+and portfolio segmentation workflows.
 
-<br>
+One of the main design decisions was separating the analytical backend from the dashboard layer itself. This helped maintain cleaner visuals while keeping the reporting structure modular and easier to scale.
+
+<br><br>
+
+## Analytical Direction
+
+What made this project interesting was realizing how much more meaningful financial datasets become once they are segmented properly.
+
+Repayment patterns begin to change when viewed through loan status categories. Regional lending concentration reveals operational priorities. Borrower stability indicators start affecting interpretation once employment and ownership data are introduced into the analysis.
+
+The dashboard gradually evolved from:
+a collection of Excel charts
+
+into:
+a structured lending intelligence system focused on portfolio interpretation.
+
+<br><br>
 
 ## Reflection
 
-This project became an important step in understanding that dashboards are not simply collections of charts.
-
-The more interesting challenge was learning how to organize information in a way that supports interpretation, comparison, and decision-making.
-
-Working through this project helped strengthen my understanding of:
-financial KPI reporting,
+This project became one of my earliest attempts at combining:
+business reporting,
 interactive dashboard design,
-portfolio segmentation,
-and analytical storytelling using Excel.
+portfolio analysis,
+and analytical storytelling inside Excel.
+
+More than the visuals themselves, the project helped me understand how dashboards are ultimately about organizing information in a way that supports interpretation and decision-making.
