@@ -31,14 +31,15 @@ Rather than displaying loan metrics in isolation, this project builds a **connec
 The first dashboard functions as the operational nerve center.
 
 Rather than overwhelming users with 50 metrics, it isolates the **8 KPIs that actually matter for portfolio health:**
-Funded amount (liquidity deployed)  
-Repayment rate (cash flow health)  
-Charge-off rate (portfolio quality deterioration)  
-Interest rate (yield on risk)  
-Debt-to-income ratio (borrower stability)  
-Application volume (demand signal)  
-MTD movement (month-to-date trends)  
-Status segmentation (healthy vs at-risk loans)
+
+Funded amount represents liquidity deployed into the lending market.  
+Repayment rate reflects overall cash flow health.  
+Charge-off rate indicates deterioration in portfolio quality.  
+Interest rate measures yield generated from lending risk.  
+Debt-to-income ratio helps evaluate borrower stability.  
+Application volume acts as a demand indicator.  
+MTD movement tracks short-term lending trends.  
+Status segmentation separates healthy loans from at-risk loans.
 
 **What makes this layer different:** The dashboard separates **charged-off loans from healthy ones**. Most dashboards treat all loans equally. This one asks: *Where is the portfolio actually breaking?* By isolating charged-offs as a distinct layer, you can see whether problem loans concentrate in specific borrower types, regions, or purposes.
 
@@ -49,18 +50,20 @@ The second dashboard shifts from "how much" to "how distributed."
 
 This is where insights emerge.
 
-**Borrower Stability Signals:**  
-Employment length (job tenure predicts repayment stability)  
-Home ownership (collateral = skin in the game)  
-Debt-to-income ratio (financial breathing room)
+**Borrower Stability Signals**
 
-**Lending Behavior Patterns:**  
-Purpose distribution (some loan purposes have inherently higher default rates — personal loans vs home improvement)  
-Regional concentration (geographic clustering of risk)  
-Loan term trends (shorter terms = lower default risk, but lower yield)  
-Monthly lending movement (seasonal patterns reveal market timing)
+Employment length helps evaluate repayment stability through job tenure.  
+Home ownership introduces a collateral perspective into borrower analysis.  
+Debt-to-income ratio reflects financial breathing room available to borrowers.
 
-**Why this matters:** A portfolio that looks balanced overall might have 70% of its funded amount concentrated in three states. A lending book that shows strong repayment rates might hide the fact that 65% of loans are to employed borrowers — meaning economic recession = portfolio collapse.
+**Lending Behavior Patterns**
+
+Purpose distribution reveals how certain loan categories carry different default tendencies.  
+Regional concentration highlights geographic clustering of lending risk.  
+Loan term trends compare risk exposure across shorter and longer repayment durations.  
+Monthly lending movement helps identify seasonal lending patterns and timing shifts.
+
+**Why this matters:** A portfolio that looks balanced overall might have 70% of its funded amount concentrated in three states. A lending book that shows strong repayment rates might hide the fact that 65% of loans are to employed borrowers, meaning economic recession could severely affect repayment stability.
 
 ### Layer 3 · The Backend Intelligence System
 ![Backend Design](assets/Design_sheet.png)
@@ -73,10 +76,7 @@ Rather than building dashboards in isolation, this workbook architecture separat
 **Calculation layer** → Pivot aggregations, KPI formulas, risk scoring  
 **Insight layer** → Dashboards that interpret the calculations  
 
-This separation meant:
-Adding a new metric doesn't break existing dashboards  
-Slicers in the dashboard automatically trigger recalculation across all dependent metrics  
-Portfolio comparisons (MTD vs MoM, charged-off vs healthy) are built into the backend, not manually calculated
+This separation meant the reporting structure remained modular and easier to maintain. New metrics could be added without disrupting existing dashboards. Dashboard slicers automatically triggered recalculation across dependent metrics. Portfolio comparisons such as MTD vs MoM and charged-off vs healthy loans were integrated directly into the backend architecture rather than calculated manually.
 
 ## What the Data Revealed
 
@@ -94,9 +94,9 @@ Higher interest rates attract riskier borrowers. A portfolio with 15% average in
 
 ## Why This Project Matters
 
-**For a lending business:** This dashboard structure separates operational reporting from strategic intelligence. You can track activity daily (Layer 1) while understanding structural portfolio risk quarterly (Layers 2 + 3).
+**For a lending business:** This dashboard structure separates operational reporting from strategic intelligence. You can track activity daily through the portfolio layer while simultaneously understanding deeper structural portfolio risks through segmentation and backend analysis.
 
-**For the analyst:** Building this taught me that dashboards aren't about pretty charts. They're about asking hard questions and organizing data so the answers become visible.
+**For the analyst:** Building this taught me that dashboards aren't about pretty charts. They're about asking difficult questions and organizing data so the answers become visible.
 
 **For portfolio managers:** This is how you move from "we're profitable" to "we're profitable because we understand our risk."
 
@@ -104,11 +104,13 @@ Higher interest rates attract riskier borrowers. A portfolio with 15% average in
 
 What made this interesting wasn't the Excel formulas. It was the architecture.
 
-Most Excel projects are dashboards bolted onto flat data. This one was different:
+Most Excel projects are dashboards bolted onto flat data. This project focused more heavily on relationships between borrower attributes, lending outcomes, repayment behavior, and risk exposure.
+
+The backend architecture integrates:
 Relational logic between borrower attributes and lending outcomes  
-Risk-weighted aggregation (not all loans are equally important)  
-Temporal analysis (comparing periods to identify trends)  
-Segmentation-driven interpretation (the same $1M portfolio looks different when viewed by region, purpose, and employment type)
+Risk-weighted aggregation systems  
+Temporal trend analysis across reporting periods  
+Segmentation-driven interpretation across regions, purposes, and employment categories
 
 The backend contains hundreds of formulas, but the user sees only clean dashboards because the complexity is hidden where it belongs — in the calculation layer.
 
